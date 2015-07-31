@@ -1,5 +1,11 @@
 {
   "main": "index.html",
   "name": "ripple-client-nw-linux-debug",
-  "description": "Standalone Ripple Client Linux using Node Webkit (Debug version)"
+  "description": "Standalone Ripple Client Linux using Node Webkit (Debug version)",
+  "window": {
+    "toolbar": true,
+    "width": 1100,
+    "height": 750
+  },
+  "single-instance": false
 }
