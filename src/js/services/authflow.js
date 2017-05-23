@@ -28,7 +28,9 @@ module.factory('rpAuthFlow', ['$rootScope', 'rpBlob',
           return;
         }
 
-        console.log("client: authflow: login succeeded", blob);
+	  console.log("client: authflow: login succeeded", blob.data.account_id);
+          // console.log("client: authflow: login succeeded", blob); // <-- verbose debug, shows password and masterkey!
+	  
         callback(null, blob, '', 'local');
       });
     };

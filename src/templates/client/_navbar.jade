@@ -4,19 +4,19 @@ nav.navbar(role="navigation", ng-controller="NavbarCtrl", ng-cloak)
       .navbar-header
         .navbar-toggle.snapper-toggle
           a(href="").fa.fa-bars
-        a.navbar-brand#logo(href="#/", title="Ripple")
+        a.navbar-brand#logo(href="#!/", title="Ripple")
       .collapse.navbar-collapse
         ul.nav.navbar-nav.topMenu
           li#nav-wallet(ng-class="{active: $route.current.mainMenu == 'wallet'}")
-            a(href="#/balance", l10n) Overview
+            a(href="#!/balance", l10n) Overview
           li#nav-send(ng-class="{active: $route.current.mainMenu == 'send'}", ng-hide="readOnly")
-            a(href="#/send", l10n) Send
+            a(href="#!/send", l10n) Send
           li#nav-exchange(ng-class="{active: $route.current.mainMenu == 'exchange' || $route.current.mainMenu == 'trade'}", ng-show="!ripple_exchange_selection_trade && !readOnly")
-            a(href="#/exchange", l10n) Trade
+            a(href="#!/exchange", l10n) Trade
           li#nav-exchange(ng-class="{active: $route.current.mainMenu == 'exchange' || $route.current.mainMenu == 'trade'}", ng-show="ripple_exchange_selection_trade || readOnly")
-            a(href="#/trade", l10n) Trade
+            a(href="#!/trade", l10n) Trade
           li#nav-fund(ng-class="{active: $route.current.mainMenu == 'fund'}")
-            a(href="#/trust", l10n) Trust Lines
+            a(href="#!/trust", l10n) Trust Lines
         ul.nav.navbar-nav.navbar-right
           li
             span(class="serverStatus {{connected ? 'online' : 'offline'}} {{serverLoad}}"
@@ -105,11 +105,11 @@ nav.navbar(role="navigation", ng-controller="NavbarCtrl", ng-cloak)
                     include ../tabs/history/_effects.jade
                 .date {{entry.date | rpfromnow}}
               li.history(ng-show="notifications.length")
-                a(href="#/history", l10n) View Full History
+                a(href="#!/history", l10n) View Full History
           li.settings.dropdown
             a.dropdown-toggle.fa.fa-cog(data-toggle="dropdown")
             ul.dropdown-menu
-              li: a(href="#/security", ng-hide="readOnly", l10n)
+              li: a(href="#!/security", ng-hide="readOnly", l10n)
                 i.icon-settings
                 |  Settings
               li.divider
@@ -120,16 +120,16 @@ nav.navbar(role="navigation", ng-controller="NavbarCtrl", ng-cloak)
     .container
       ul(ng-show="$route.current.mainMenu == 'wallet'")
         li(ng-class="{active: $route.current.tabName == 'balance'}")
-          a(href="#/balance", l10n) Balance
+          a(href="#!/balance", l10n) Balance
         li(ng-class="{active: $route.current.tabName == 'history'}")
-          a(href="#/history", l10n) History
+          a(href="#!/history", l10n) History
         li(ng-class="{active: $route.current.tabName == 'contacts'}", ng-hide="readOnly")
-          a(href="#/contacts", l10n) Contacts
+          a(href="#!/contacts", l10n) Contacts
       ul(ng-show="$route.current.mainMenu == 'exchange' || $route.current.mainMenu == 'trade'")
         li(ng-class="{active: $route.current.tabName == 'exchange'}", ng-hide="readOnly")
-          a(href="#/exchange", l10n) Simple
+          a(href="#!/exchange", l10n) Simple
         li(ng-class="{active: $route.current.tabName == 'trade'}")
-          a(href="#/trade", l10n) Advanced
+          a(href="#!/trade", l10n) Advanced
   .subnav(ng-show="invalidRegularWallet && !readOnly")
     .container
       .row
@@ -141,7 +141,7 @@ nav.navbar(role="navigation", ng-controller="NavbarCtrl", ng-cloak)
     .container
       ul
         li(ng-class="{active: $route.current.tabName == 'xrp'}")
-          a(href="#/xrp", l10n) Fund
+          a(href="#!/xrp", l10n) Fund
         li(ng-class="{active: $route.current.tabName == 'withdraw'}")
-          a(href="#/withdraw", l10n) Withdraw
+          a(href="#!/withdraw", l10n) Withdraw
 

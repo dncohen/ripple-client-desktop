@@ -10,9 +10,9 @@ section.col-xs-12.content(ng-controller="LoginCtrl")
         li(ng-class="{active: mode=='coldwallet'}")
           a(href="", ng-click="mode='coldwallet'") Cold Wallet
         li(ng-class="{active: mode=='submittxn'}")
-          a(href="#/submit", ng-click="mode='submittxn'") Submit Txn
+          a(href="#!/submit", ng-click="mode='submittxn'") Submit Txn
         li(ng-class="{active: mode=='serversettings'}")
-          a(href="#/advanced", ng-click="mode='serversettings'") Server Settings  
+          a(href="#!/advanced", ng-click="mode='serversettings'") Server Settings  
 
   .row.auth-form-container(ng-show="mode=='open'")
     .col-md-offset-2.col-md-8
@@ -21,7 +21,7 @@ section.col-xs-12.content(ng-controller="LoginCtrl")
           h2(l10n) Open account
 
           .form-group
-            a.btn.btn-block.btn-link(href='#register', l10n) Create new account
+            a.btn.btn-block.btn-link(href="#!/register", l10n) Create new account
 
           .form-group
             a.btn.btn-block.btn-default#walletfile(ng-click='fileInputClick()', l10n) Select{{walletfile ? "ed" : ""}} account file {{walletfile}}
