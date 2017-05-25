@@ -549,8 +549,19 @@ SendTab.prototype.angular = function (module)
 
               // Send max is 1.01 * amount
               var scaleAmount = alt.amount.to_json();
-              scaleAmount.value = 1.01;
-              alt.send_max = alt.amount.scale(scaleAmount);
+	      scaleAmount.value = 1.01;
+	      try {
+		alt.send_max = alt.amount.scale(scaleAmount);
+	      } catch(err) {
+		// This is reached when we attempt to scale() an XRP amount.
+		// Catch error here so that at least other source options are shown.
+		if (raw.source_amount.currency) {
+		  console.log("Unable to calculate max send amount of " + raw.source_amount.currency, err);
+		} else {
+		  console.log("Unable to calculate max send amount of XRP", err);
+		}
+		return {}
+	      }
 
               alt.paths = raw.paths_computed
                 ? raw.paths_computed

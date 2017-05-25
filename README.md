@@ -14,7 +14,8 @@
 - Your desktop client is in the `packages/RippleAdminConsole-<version>` directory
 
 ### Note
-- There are breaking changes in the c++ API when using node version 4. You should use node version 0.12. <-- Still true?  Seems to build OK with node v4.7.3
-- The current package.json specifies ripple-lib 0.13.0-rc14 because rc15 has breaking changes.  Which is unusual slip in there without even a version change, but that happened.
-- Pathfinding on the send page comes up empty for certain amounts.  Annoying.
+- Builds on node.js v4.7.3
+- The current package.json specifies ripple-lib 0.13.0-rc14 because rc15 introduced breaking changes (!)
+- The send page has a bug preventing it from calculating a source amount of XRP, for many destination currencies and values.
+
 
